@@ -13,6 +13,8 @@ assigning taxonomy is all optional.
 The input files and all major parameters (for example, regarding cutadapt and dada2) can be modified in the parameters file.
 There are such files in the folder "examples"
 
+The `Goldford` folder contains the script version and parameters used for "Leveraging phylogenetic signal to unravel microbial community function and assembly rules" by Talavera-Marcos, Aguirre de Cárcer and Parras-Moltó ([link](https://doi.org/10.21203/rs.3.rs-2272005/v1)).
+
 ### Requirements
 
 - python3 (tested 3.6.8)
@@ -41,10 +43,3 @@ There are such files in the folder "examples"
 1. Write a parameters file. See "examples" folder.
 
 2. run `Rscript procesado_dada2_cluster.R --params <parameters_file>`
-
-### Additional scripts
-
-- merge**_otus.py**. sometimes qiime input (for pick_otus.py) is too heavy of a file.
-Therefore you need to split it and obtain several output OTU files. But you can't
-just paste together the outputs again, since it would mean repeated OTU IDs. So...
-Use this script.
