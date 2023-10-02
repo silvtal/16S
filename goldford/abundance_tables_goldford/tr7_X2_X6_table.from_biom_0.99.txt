@@ -1,0 +1,18 @@
+# Constructed from biom file
+#OTU ID	sa15	sa7	sa8	sa11	sa13	sa14	sa16	sa2	sa4	sa5	sa6	sa10	sa12	sa3	sa1	sa9	taxonomy
+227343	153.0	10.0	207.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas; s__
+4370747	0.0	0.0	0.0	4303.0	4633.0	4196.0	3780.0	4215.0	3864.0	4134.0	4712.0	0.0	0.0	0.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas; s__viridiflava
+4454257	9015.0	3099.0	3509.0	5631.0	4739.0	5905.0	6291.0	5465.0	6282.0	5275.0	6140.0	5607.0	9646.0	10612.0	6956.0	799.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae
+4416113	0.0	11.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae; g__Serratia; s__marcescens
+4399988	0.0	3294.0	2117.0	0.0	0.0	0.0	0.0	0.0	12.0	0.0	0.0	1731.0	0.0	0.0	2918.0	1762.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae; g__Pantoea; s__agglomerans
+4451011	453.0	0.0	4680.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	1105.0	0.0	12.0	2016.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas; s__pseudoalcaligenes
+4390410	0.0	0.0	0.0	0.0	268.0	0.0	0.0	177.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae; g__Pantoea
+4456889	1238.0	2407.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	2918.0	0.0	205.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae
+2458172	0.0	57.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	43.0	0.0	0.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Alphaproteobacteria; o__Rhizobiales; f__Brucellaceae; g__Ochrobactrum; s__
+4458775	0.0	0.0	0.0	853.0	1219.0	758.0	788.0	1002.0	701.0	1450.0	7.0	0.0	0.0	0.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae; g__Pantoea
+333782	0.0	165.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae
+814442	0.0	0.0	277.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	292.0	1576.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae; g__Citrobacter; s__
+3587343	0.0	567.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	31.0	16.0	k__Bacteria; p__Bacteroidetes; c__Sphingobacteriia; o__Sphingobacteriales; f__Sphingobacteriaceae; g__Sphingobacterium; s__multivorum
+4483895	0.0	1249.0	69.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	560.0	108.0	0.0	650.0	4646.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Aeromonadales; f__Aeromonadaceae; g__; s__
+4344018	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	44.0	k__Bacteria; p__Bacteroidetes; c__Flavobacteriia; o__Flavobacteriales; f__[Weeksellaceae]; g__Chryseobacterium; s__
+4449851	0.0	0.0	0.0	72.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	42.0	0.0	0.0	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Enterobacteriales; f__Enterobacteriaceae
