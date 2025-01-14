@@ -1,5 +1,24 @@
-load("~/AAA/2022-06-29_ratones_ugr/FINALmouse_june22_sep5.RData")
-print(multithread)
+library('dada2')
+
+## Set directories
+fastaF_input <- paste0('~/AAA/2021-03-12__procesado_datos_goldford/forward/',datos)
+fastaR_input <- paste0('~/AAA/2021-03-12__procesado_datos_goldford/reverse/',datos)
+fastaF_output <- paste0('~/AAA/2021-03-12__procesado_datos_goldford/dada_filter_F_reads_',datos)
+fastaR_output <- paste0('~/AAA/2021-03-12__procesado_datos_goldford/dada_filter_R_reads_',datos)
+
+## Run filterandTrim
+## -----------------
+#truncLen = c(220,160) (Emergent simplicity in microbial community assembly(J.E.Goldford))
+trimmed <- filterAndTrim(fastaF_input, fastaF_output, fastaR_input, fastaR_output, truncLen = c(220,160),verbose=TRUE)
+
+head(trimmed)
+
+
+## Quality plots
+## -------------
+plotQualityProfile(fastaF_input[1:2])
+plotQualityProfile(fastaR_input[1:2])
+
 ## Learn the error rates
 ## ---------------------
 log_print("Learning the error rates...")
@@ -23,7 +42,7 @@ if (plot_errors) {
   }
   log_print("Done")
 }
-
+load("after_learnErrors.RData")
 ## Implement the main algorithm with dada()
 ## ----------------------------------------
 log_print("RUNNING DADA...")
@@ -113,22 +132,15 @@ if (exists("my_samples")) {
   ps_op <- merge_phyloseq(ps, sampledata)
 }
 
-## Plot top
-if (bar_plot_top) {
-  if (is.null(top)) {
-    top <- length(taxa_names(ps) )
-    log_print("Creating bar plot for all taxa...")
-  } else {
-    log_print(paste0("Creating bar plot for top ", top, " taxa..."))
-  }
-  toptop <- names(sort(taxa_sums(ps), decreasing = TRUE))[1:top]
-  ps_top <- transform_sample_counts(ps, function(OTU) OTU/sum(OTU))
-  ps_top <- prune_taxa(toptop, ps_top)
-  pdf(file = paste0(logs_output_f, "/", data, "_phyloseqBarPlot_"), width = 20)
-  p1<-plot_bar(ps_top, fill = 'Order') + theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
-  p2<-plot_bar(ps_top, fill = 'Family') + theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
-  p3<-plot_bar(ps_top, fill = 'Genus') + theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
-  plot(p1); plot(p2); plot(p3)
+if (bar_plot) {
+  log_print("Creating bar plot...")
+  top20 <- names(sort(taxa_sums(ps), decreasing = TRUE))[1:20]
+  ps_top20 <- transform_sample_counts(ps, function(OTU) OTU/sum(OTU))
+  ps_top20 <- prune_taxa(top20, ps_top20)
+  pdf(file = paste0(logs_output_f, "/", data, "_phyloseqBarPlot_"))
+  plot_bar(ps_top20, fill = 'Order') + theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
+  plot_bar(ps_top20, fill = 'Family') + theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
+  plot_bar(ps_top20, fill = 'Genus') + theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
   dev.off()
   log_print("Done")
 }
@@ -136,13 +148,13 @@ if (bar_plot_top) {
 ## Plot Krona
 if (plotkrona) {
   log_print("Creating Krona plot...")
-  plot_krona(ps_op,'GP-krona','Type')
+  plot_krona(ps_op,'GP-krona','Type') # TODO we can change this up too
   log_print("Done")
 }
 
 ## dada2 to fasta (re-replication)
 log_print("Rarefying...")
-rare <- rarefy_even_depth(ps)
+rare <- rarefy_even_depth(ps) # TODO more params to tweak here. to the smallest number of seqs by default
 plot_bar(rare, fill = 'Family') + theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())
 
 log_print("Creating .fa files...")
@@ -165,6 +177,13 @@ system(paste0('cat ',dada2cleaned_output_f,'/* > ',dada2cleaned_output_f,'/',dat
 
 log_print("Done")
 log_print(paste0("Proccessing finished correctly for ",data,"."))
+
+# $BIO
+# =============
+# module load qiime/1.9.1 
+# #module load R/3.5.0        ## no hace falta
+# #module load python/3.6.5   ## no hace falta
+# python BacterialCore.py -f <data>.fa -o <data>_100percArbol -p 3 -initial_level 0.99 -min_core_percentage 1 -tree_level 99 -tree_type_analysis 1
 
 if (savefinalRData) {
   save.image(paste0("FINAL",data,".RData"))
